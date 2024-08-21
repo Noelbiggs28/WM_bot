@@ -1,0 +1,4 @@
+.env
+venv
+hidden_info.py
+__pycache__
