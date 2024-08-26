@@ -2,3 +2,6 @@
 venv
 hidden_info.py
 __pycache__
+scope.py
+wmac_key.json
+old_hc.py

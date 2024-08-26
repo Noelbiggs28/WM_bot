@@ -11,6 +11,7 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True  # Enable if you need message content
+intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
@@ -23,19 +24,26 @@ async def send_message(ctx, message):
         for chunk in chunks:
             await ctx.send(chunk)
 
+
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
     try:
         synced = await bot.tree.sync()
+        guild_id = os.getenv('TEST_GUILD_ID')  # Replace with your guild ID
+        guild = discord.Object(id=guild_id)
+        await bot.tree.sync(guild=guild)
         print(f'Synced {len(synced)} commands.')
     except Exception as e:
         print(f'Error syncing commands: {e}')
 
 async def load_cogs():
-    await bot.load_extension('cogs.timezones')
-    await bot.load_extension('cogs.headcounter')
-    await bot.load_extension('cogs.fun')
+    # await bot.load_extension('cogs.timezones')
+    # await bot.load_extension('cogs.headcounter')
+    await bot.load_extension('cogs.scheduler')
+    await bot.load_extension('cogs.makemap')
+    # await bot.load_extension('cogs.fun')
+
 
 # Running the bot
 async def main():

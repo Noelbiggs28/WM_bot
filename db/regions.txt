@@ -1,0 +1,415 @@
+aaaBattleground USA Regions (max 3 players)
+bbbAtlantic States
+American Georgia - Western - 6
+Maine - Western - 5
+New York - Western - 7
+North Carolina - Western - 6
+Pennsylvania - Western - 6
+Virginia - Western - 6
+bbbSouth America
+Chihuahua - Eastern - 6
+Cuba - Eastern - 6
+Haiti - Eastern - 5
+Mexico - European - 7
+Nicaragua - Eastern - 5
+Nuevo Leon - Eastern - 5
+Yucatan - European - 5
+bbbSouthern/ Central States
+Arizona - Western - 6
+Florida - Western - 7
+Illinois - Western - 7
+Iowa - Western - 5
+Louisiana - Western - 5
+Ohio - Western - 6
+Texas - Western - 7
+bbbThe North
+British Colombia - European - 5
+Michigan - Western - 5
+Minnesota - Western - 5
+Ontario - European - 5
+Quebec - European - 5
+Saskatchewan - European - 5
+bbbWestern States
+California - Western - 7
+Colorado - Western - 6
+Idaho - West - 5
+Kansas - Western - 5
+Montana - Western - 5
+Washington - Western - 7
+aaaFlashpoint Regions (max 3 players)
+bbbCentral Europe
+Austria - Eastern - 5
+Bulgaria - Eastern - 5
+Croatia - European - 5
+Czechia - European - 5
+Hungary - Eastern - 5
+Romania - Eastern - 6
+bbbThe East
+Belarus - Eastern - 5
+Iran - Eastern - 5
+Russia - Eastern - 7
+Turkey - Western - 7
+Syria - Eastern - 5
+Ukraine - Eastern - 5
+bbbMediterranean
+Algeria - Eastern - 5
+France - European - 7
+Greece - European - 6
+Italy - European - 7
+Serbia - Eastern - 5
+Spain - European - 5
+bbbThe North
+Baltic States - Western - 5
+Finland - Western - 5
+Germany - European - 7
+Norway - Western - 6
+Poland - European - 7
+Sweden - European - 6
+bbbThe West
+Canada - European - 6
+Cuba - Eastern - 6
+Ireland - European - 5
+Portugal - European - 5
+United Kingdom - European - 5
+United States - Western - 7
+aaaRising Tides Regions (max 3 players)
+bbbCentral America
+Caribbean Coalition - Western - 6
+Cuba - Eastern - 5
+Colombia - Western - 6
+Mesoamerica - Western - 5
+Mexico - European - 6
+Talamanca Revival - Western - 5
+Venezuela - Eastern - 6
+Zapatista Municipalities - Western - 5
+bbbCentral Europe
+Austria - European - 5
+Belarus - Eastern - 6
+Greater Serbia - Eastern - 5
+Hungary - Eastern - 5
+New Yugoslavia - Eastern - 5
+Romania - Eastern - 6
+Russia - Eastern - 7
+Ukraine - Eastern - 6
+bbbMainland Asia
+China - East - 7
+Chukotka - East - 5
+Manchuria - Eastern - 6
+Mekong Cooperation - Eastern - 6
+Mongolia - Eastern - 6
+Myanmar - Eastern - 6
+Uyghur - Eastern - 7
+bbbMediterranean
+Algeria - East - 6
+Egypt - Western - 6
+France - European - 7
+Greece - European - 6
+Italy - European - 6
+Libya - Eastern - 6
+Morocco - Western - 5
+Spain - European - 6
+Turkey - Western - 7
+bbbMiddle East
+Iran - Eastern - 6
+Iraq - Western - 6
+Oman - Western - 5
+Saudi Arabia - Western - 6
+Sudan - Eastern - 5
+Syria - Eastern - 5
+Transcaucasia - Western - 6
+Yemen - Eastern - 5
+bbbNordic Europe
+Baltic States - Western - 5
+Finland - Western - 5
+Germany - European - 6
+Ireland - European - 5
+Norway - Western - 5
+Poland - European - 6
+Sweden - European - 6
+United Kingdom - European - 6
+bbbNorth America
+California Republic - Western - 7
+Canada - European - 7
+First Nations - Western - 5
+Greenland - European - 5
+Nunavut - European - 5
+Quebec - European - 7
+Republic of Texas - Western - 6
+The Free West - Western - 6
+United States - Western - 6 
+bbbOceania
+Australia - Western - 6
+Indonesia - European - 7
+Japan - Western - 7
+Korea - Western - 6
+New Zealand - European - 5
+Papua New Guinea - Eastern - 5
+Philippines - Western - 6
+bbbSouth Africa
+Angola - Eastern - 5
+Dr Congo - Eastern - 6
+East African Federation - Eastern - 6
+Ethiopia - Eastern - 5
+Madagascar - European - 5
+Mozambique - Eastern - 5
+Namibia - European - 5
+South Africa - European - 5
+Zambia - European - 5
+bbbSouth America
+Amazonia - European - 7
+Argentina - West - 6
+Bolivia - Eastern - 5
+Brazil - European - 6
+Chile - European - 5
+Patagonia - Eastern - 5
+Peru - Western - 6
+Republic of La Plata - European - 5
+Sranan Tongo - European - 5
+bbbWest Africa
+Cameroon - European - 5
+Ghana - European - 5
+Guinea - Eastern - 5
+Mali - European - 5
+Mauritania - Eastern - 5
+Niger - Western - 5
+Nigeria - Western - 5
+Republic of the Congo - Eastern - 5
+Sahrawi Republic - Eastern - 5
+bbbWest Asia
+Afghanistan - Eastern - 6
+Greater Tamilakam - Eastern - 5
+Hindustan - Eastern - 5
+Kazakhstan - Eastern - 6
+Kyrgyzstan - Eastern - 6
+Marathi Federation - Eastern - 5
+Pakistan - Western - 6
+Turkmenistan - Eastern - 5
+Uzbekistan - Eastern - 5
+aaaOverkill Regions (max 3 players)
+bbbCentral Europe
+Austria - European - 6
+Balkan Union - Eastern - 6
+Bulgaria - Eastern - 5
+Czechia - European - 5
+Greece - European - 6
+Hungary - Eastern - 5
+Italy - European - 7
+Romania - Eastern - 6
+bbbEast Africa
+Egypt - Western - 7
+Ethiopia - Eastern - 5
+Kenya - Western - 5
+Madagascar - European - 5
+Somalia - Eastern - 5
+South Sudan - Eastern - 5
+Sudan - Eastern - 6
+Tanzania - Eastern - 5
+bbbMainland Asia
+Cambodia - Eastern - 5
+China - Eastern - 7
+India - Eastern - 7
+Laos - Eastern - 5
+Mongolia - Eastern - 5
+Myanmar - Eastern - 6
+Thailand - Western - 6
+Vietnam - Eastern - 6
+bbbMiddle East
+Iraq - Western - 6
+Iran - Eastern - 7
+Saudi Arabia - Western - 7
+Syria - Eastern - 5
+Transcaucasia - Western - 5
+Turkey - Western - 7
+Oman - Western - 5
+Yemen - Eastern - 5
+bbbNordic Europe
+Baltic States - Western - 6
+Belarus - Eastern - 6
+Denmark - European - 5
+Finland - Western - 5
+Germany - European - 7
+Iceland - Western - 5
+Norway - Western - 5
+Poland - European - 7
+Sweden - European - 6
+bbbNorth Africa
+Algeria - Eastern - 6
+Chad - Eastern - 5
+Egypt - Western - 7
+Libya - Eastern - 6
+Morocco - Western - 5
+Niger - Western - 5
+Sudan - Eastern - 6
+Tunisia - European - 5
+North/ Central America
+Canada - European - 6
+Caribbean Coalition - Western - 5
+Colombia - Western - 7
+Cuba - Eastern - 5
+Mexico - European - 6
+Parlacen - Western - 5
+USA - Western - 7
+Venezuela - Eastern - 6
+bbbOceania
+Australia - Western - 7
+Indonesia - European - 7
+Japan - Western - 7
+Korea - Western - 6
+Malaysia - Eastern - 6
+New Zealand - European - 5
+Papa New Guinea - Eastern - 5
+Philippines - Western - 6
+bbbSouth Africa
+Angola - Eastern - 6
+Botswana - Eastern - 5
+Dr Congo - Eastern - 6
+Mozambique - Eastern - 5
+Namibia - European - 5
+South Africa - European - 6
+Tanzania - Eastern - 5
+Zambia - European - 5
+bbbSouth America
+Argentina - Western - 7
+Brazil - European - 7
+Bolivia - Eastern - 5
+Chile - European - 7
+Ecuador - Western - 5
+Paraguay - European - 5
+Peru - Western - 6
+Uruguay - Western - 5
+bbbWest Africa
+Cameroon - European - 5
+Ghana - European - 5
+Guinea - Eastern - 5
+Mali - European - 5
+Mauritania - Eastern - 5
+Nigeria - Eastern - 5
+Republic of Congo - Eastern - 5
+Sahrawi Republic - Eastern - 5
+bbbWest Asia
+Afghanistan - Eastern - 6
+Kazakhstan - Eastern - 6
+Kyrgyzstan - Eastern - 5
+Pakistan - Western - 7
+Russia - Eastern - 7
+Turkmenistan - Eastern - 5
+Ukraine - Eastern - 6
+Uzbekistan - Eastern - 5
+bbbWest Europe
+Benelux - European - 5
+Ireland - European - 5
+Italy - European - 7
+France - European - 7
+Germany - European - 7
+Portugal - European - 5
+Spain - European - 6
+United Kingdom - European - 7
+aaaWW3 Regions (5 players max)
+bbbAmerica
+Argentina - Western - 6
+Bolivia - Eastern - 6
+Brazil - European - 8
+Canada - European - 6
+Chile - European - 5
+Colombia - Western - 6
+Cuba - Eastern - 5
+Mexico - European - 5
+Peru - Western - 6
+USA - Western - 9
+Venezuela - Eastern - 6
+bbbAsia
+Afghanistan - Eastern - 6
+China - Eastern - 9
+India - Eastern - 8
+Japan - Western - 6
+Kazakhstan - Eastern - 6
+Mongolia - Eastern - 5
+Myanmar - Eastern - 6
+Pakistan - Western - 6
+Russia - Eastern - 9
+Thailand - Western - 6
+Vietnam - Eastern - 6
+bbbEastern Europe
+Belarus - Eastern - 6
+Finland - Western - 5
+Germany - European - 7
+Greece - European - 5
+Poland - European - 6
+Romania - Eastern - 6
+Russia - Eastern - 9
+Serbia - Eastern - 5
+Sweden - European - 6
+Turkey - Western - 6
+Ukraine - Eastern - 6
+bbbMediterranean
+Algeria - Eastern - 6
+Austria - European - 5
+Egypt - Western - 6
+France - European - 7
+Greece - European - 5
+Italy - European - 6
+Libya - Eastern - 5
+Morocco - Western - 5
+Serbia - Eastern - 5
+Spain - European - 6
+Turkey - Western - 6
+bbbMiddle East
+Afghanistan - Eastern - 6
+Egypt - Western - 6
+Ethiopia- Eastern - 6
+Iran - Eastern - 7
+Iraq - Western - 6
+Israel - Western - 5
+Kazakhstan - Eastern - 6
+Pakistan - Western - 6
+Saudi Arabia - Western - 6
+Syria - Eastern - 6
+Turkey - Western - 6
+bbbNordic Europe
+Austria - European - 5
+Belarus - Eastern - 6
+Finland - Western - 5
+France - European - 7
+Germany - European - 7
+Sweden -European - 6 
+Norway - Western - 5
+Poland - European - 6
+Russia - Eastern - 9
+Ukraine - Eastern - 6
+United Kingdom - European - 6
+bbbNorthern Africa
+Algeria - Eastern - 6
+Cameroon - European - 5
+Chad - Eastern - 6
+Dr Congo - 5 - Eastern
+Egypt - Western - 6
+Ethiopia - Eastern - 6
+Kenya - 5 - Western
+Libya - Eastern - 5
+Mali - European - 5
+Morocco - Western - 5
+Nigeria - Eastern - 5
+bbbOceania
+Australia - Western - 6
+China - Eastern - 9
+Indonesia - European - 6
+Japan - Western - 6
+Myanmar - Eastern - 6
+New Zealand - European - 5
+North Korea - Eastern - 4
+South Korea - Western - 4 
+Philippines - Western - 5
+Thailand - Western - 6
+Vietnam - Eastern - 6
+bbbSouthern Africa 
+Angola - Eastern - 5
+Cameroon - European - 5
+Chad - Eastern - 6
+Dr. Congo - Eastern - 5
+Ethiopia - Eastern - 6
+Kenya - Western - 5
+Mali - European - 5
+Mozambique - Eastern - 6
+Namibia - European - 5
+Nigeria - Eastern - 5
+South Africa - European - 5
