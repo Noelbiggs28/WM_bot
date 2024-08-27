@@ -1,5 +1,5 @@
-with open("regions.txt", 'r') as infile:
-    with open("regions.csv", 'w') as outfile:
+with open("db/regions.txt", 'r') as infile:
+    with open("db/regions.csv", 'w') as outfile:
         game = ''
         region = ''
         for line in infile:

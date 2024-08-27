@@ -4,20 +4,18 @@ from discord.ext import commands
 from scope import DiscordID
 import sqlite3
 
-# Roles question
+# rules question
 class RolesQuestionView(discord.ui.View):
     def __init__(self, cog):
         super().__init__()
         self.cog = cog
     @discord.ui.button(label="Yes", style=discord.ButtonStyle.success, custom_id="yes")
     async def option_1(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Respond with a follow-up question and new buttons
         second_view = LeaderQuestionView(self.cog)
         await interaction.response.edit_message(content="Are you comfortable being vocal and leading your team?", view=second_view)
 
     @discord.ui.button(label="No", style=discord.ButtonStyle.danger, custom_id="no")
     async def option_2(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Send a link to another channel and replace the message
         await interaction.response.edit_message(content=f"Please review how roles work and come back. <#{DiscordID.test_roles_tutorial}>", view=None)
 
 # leading question
@@ -28,13 +26,11 @@ class LeaderQuestionView(discord.ui.View):
 
     @discord.ui.button(label="Yes", style=discord.ButtonStyle.success, custom_id="yes")
     async def option_1(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Respond with a follow-up question and new buttons
         third_view = RulesQuestionView(self.cog)
         await interaction.response.edit_message(content="Do you understand how to summarize the Map Registration before the game and swear to provide a fair and honest Field Report at the end of the game?", view=third_view)
 
     @discord.ui.button(label="No", style=discord.ButtonStyle.danger, custom_id="no")
     async def no_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Send a link to another channel and replace the message
         await interaction.response.edit_message(content=f"Here is a channel to help you find leader<#{DiscordID.test_new_map_chat}>", view=None)
 
 # sumerize question
@@ -46,7 +42,6 @@ class RulesQuestionView(discord.ui.View):
     @discord.ui.button(label="Yes", style=discord.ButtonStyle.success, custom_id="yes")
     async def yes_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         try:
-            # Trigger the dropdown menu when "Yes" is clicked
             dropdown_view = DropdownViewMap(self.cog)
             await interaction.response.edit_message(content="Select when the event starts:", view=dropdown_view)
         except Exception as e:
@@ -54,7 +49,6 @@ class RulesQuestionView(discord.ui.View):
 
     @discord.ui.button(label="No", style=discord.ButtonStyle.danger, custom_id="no")
     async def no_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Send a link to another channel and replace the message
         await interaction.response.edit_message(content=f"Please review how to lead and come back <#{DiscordID.test_how_to_lead}>", view=None)
 
 
@@ -63,23 +57,19 @@ class TimerView(discord.ui.View):
         super().__init__()
         self.cog = cog
         
-        # Create the hour selection dropdown
         hour_options = [discord.SelectOption(label=f"{hour:02}", description=f"{hour:02}:00 or {hour:02}:30") for hour in range(24)]
         self.hour_select = discord.ui.Select(placeholder="Select hour", options=hour_options, min_values=1, max_values=1)
         self.add_item(self.hour_select)
         
-        # Create the minute selection dropdown
         minute_options = [discord.SelectOption(label=f"{minute:02}", description="Minutes") for minute in [0, 15, 30, 45]]
         self.minute_select = discord.ui.Select(placeholder="Select minute", options=minute_options, min_values=1, max_values=1)
         self.add_item(self.minute_select)
 
     async def interaction_check(self, interaction: discord.Interaction) -> bool:
-        # Store selected hour and minute when a selection is made
         selected_hour = self.hour_select.values[0]
         selected_minute = self.minute_select.values[0]
         self.cog.responses['time'] = f"{selected_hour}:{selected_minute}"
         
-        # Prompt user to confirm their selection
         dropdown_view = DropdownViewMap(self.cog)
         await interaction.response.edit_message(content="Select map:", view=dropdown_view)
         # await interaction.response.send_message(f"Time selected: {self.cog.responses['time']}. Please confirm.", ephemeral=True)

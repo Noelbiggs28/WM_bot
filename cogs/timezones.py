@@ -9,11 +9,10 @@ from channels import TEST_GUILD_IDS
 class TimeZones(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        # [timezone for grabbing time, words to add to channel, channel id, if it observes dst]
         self.channel_ids = TEST_GUILD_IDS
         self.update_channels_task.start() 
 
-    @tasks.loop(minutes=5)  # Update every 5 minutes
+    @tasks.loop(minutes=5)  
     async def update_channels_task(self):
         print("Updating channel names...")
         self.time_in()
@@ -49,14 +48,11 @@ class TimeZones(commands.Cog):
     @update_channels_task.before_loop
     async def before_update(self):
         await self.bot.wait_until_ready()  
-
-        # Wait until the current time's minute is a multiple of 5
         while True:
             now = datetime.datetime.now()
             if now.minute % 5 == 0:
                 break
             await asyncio.sleep(30)  
 
-# Register the cog
 async def setup(bot):
     await bot.add_cog(TimeZones(bot))

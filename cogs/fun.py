@@ -11,6 +11,5 @@ class Fun(commands.Cog):
         image_url = 'https://cdn.discordapp.com/attachments/1047042927429427253/1275413510683103334/IMG_4488.jpg?ex=66c5cce4&is=66c47b64&hm=7357f0a270dcfa9d10bdbab02fae90d866e393984d270dd53da53ea3f4bb9799&'
         await ctx.send(image_url)
 
-# Setup function to add the cog to the bot
 async def setup(bot):
     await bot.add_cog(Fun(bot))

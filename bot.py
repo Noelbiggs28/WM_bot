@@ -10,7 +10,7 @@ load_dotenv()
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 intents = discord.Intents.default()
-intents.message_content = True  # Enable if you need message content
+intents.message_content = True  
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -30,7 +30,7 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
     try:
         synced = await bot.tree.sync()
-        guild_id = os.getenv('TEST_GUILD_ID')  # Replace with your guild ID
+        guild_id = os.getenv('TEST_GUILD_ID')  
         guild = discord.Object(id=guild_id)
         await bot.tree.sync(guild=guild)
         print(f'Synced {len(synced)} commands.')
@@ -44,8 +44,6 @@ async def load_cogs():
     await bot.load_extension('cogs.makemap')
     # await bot.load_extension('cogs.fun')
 
-
-# Running the bot
 async def main():
     async with bot:
         await load_cogs()

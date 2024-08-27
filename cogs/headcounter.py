@@ -27,8 +27,6 @@ class HeadCounter(commands.Cog):
         await ctx.defer()
         updated_users = 0
         members = ctx.guild.members
-
-        # SQL to insert data into the TRACKER table
         insert_query = """
         INSERT OR REPLACE INTO TRACKER (user_role, user_name, nick_name, last_activity_date, days_inactive, maps_participated_in, maps_led, maps_won, maps_lost)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -48,7 +46,7 @@ class HeadCounter(commands.Cog):
             row_data = (
                 user_role,
                 member.name,
-                member.nick or '',  # Handle case where nick might be None
+                member.nick or '',  
                 datetime.today().strftime('%Y-%m-%d'),
                 0,  # Days inactive
                 0,  # Maps participated in
@@ -57,7 +55,7 @@ class HeadCounter(commands.Cog):
                 0   # Maps lost
             )
             cursor.execute(insert_query, row_data)
-        self.conn.commit()  # Commit all changes
+        self.conn.commit()  
         cursor.close()
 
         await ctx.send(f'Member initialization complete. Collected total {updated_users} users')
@@ -88,18 +86,14 @@ class HeadCounter(commands.Cog):
         roles_after = [role.id for role in after.roles]
         print(roles_before)
         print(roles_after)
-        # Fetch user from the database
         cursor = self.conn.cursor()
         cursor.execute("SELECT * FROM Tracker WHERE user_name = ?", (username,))
         user_data = cursor.fetchone()
-
-        # User was a starter and is now a veteran
         if DiscordID.test_veteran in roles_after:
             if user_data:
                 cursor.execute("UPDATE Tracker SET user_role = ? WHERE user_name = ?", ('veteran', username))
                 self.conn.commit()
 
-        # User was not a starter but now is
         elif DiscordID.test_private in roles_after or DiscordID.test_greenie in roles_after:
             if DiscordID.test_private not in roles_before and DiscordID.test_greenie not in roles_before:
                 if user_data:
@@ -151,87 +145,6 @@ class HeadCounter(commands.Cog):
 
         await ctx.send('Channel count creation complete')
 
-    # @commands.Cog.listener()
-    # async def on_guild_channel_update(self, before, after):
-    #     notification_channel = self.bot.get_channel(DiscordID.test_public_notif_channel)
-    #     if after.category:
-    #         if after.category.id in (DiscordID.test_category_1x, DiscordID.test_category_4x):
-    #             if before.category != after.category:
-    #                 participating_players = after.members
-    #                 players_list = [f'<@{player.id}>' for player in participating_players]
-
-    #                 if players_list:
-    #                     if len(players_list) == 1:
-    #                         players_string = players_list[0]
-    #                     else:
-    #                         players_string = ', '.join(players_list[:-1]) + ' and ' + players_list[-1]
-    #                     await notification_channel.send(f'A new game has started with {players_string}')
-
-    #                 for player in participating_players:
-    #                     username = player.name
-    #                     try:
-    #                         row_number = activity_sheet.find(username, in_column=2).row
-    #                         activity_sheet.update([[datetime.today().strftime('%Y-%m-%d')]], f'D{row_number}',
-    #                                               value_input_option=gspread.utils.ValueInputOption.user_entered)
-    #                         current_map_counter = int(activity_sheet.acell(f'F{row_number}').value)
-    #                         current_map_counter += 1
-    #                         activity_sheet.update([[current_map_counter]], f'F{row_number}',
-    #                                               value_input_option=gspread.utils.ValueInputOption.user_entered)
-    #                     except AttributeError:
-    #                         pass
-
-    #                 if after.category.id == DiscordID.test_category_1x:
-    #                     self.category_counts['1x'] += 1
-    #                     channel_1x_name = f'{Messages.channel_name}{self.category_counts["1x"]}'
-    #                     ch = self.bot.get_channel(self.category_counts['channel_1x'])
-    #                     if ch:
-    #                         await ch.edit(name=channel_1x_name)
-
-    #                 if after.category.id == DiscordID.test_category_4x:
-    #                     self.category_counts['4x'] += 1
-    #                     channel_4x_name = f'{Messages.channel_name}{self.category_counts["4x"]}'
-    #                     ch = self.bot.get_channel(self.category_counts['channel_4x'])
-    #                     if ch:
-    #                         await ch.edit(name=channel_4x_name)
-
-    #     if (before.category.id in (DiscordID.test_category_1x, DiscordID.test_category_4x) and
-    #             after.category.id == DiscordID.test_victory_category):
-    #         participating_players = before.members
-
-    #         for player in participating_players:
-    #             username = player.name
-    #             try:
-    #                 row_number = activity_sheet.find(username, in_column=2).row
-    #                 current_win_counter = int(activity_sheet.acell(f'G{row_number}').value)
-    #                 current_win_counter += 1
-    #                 activity_sheet.update([[current_win_counter]], f'G{row_number}',
-    #                                       value_input_option=gspread.utils.ValueInputOption.user_entered)
-    #             except AttributeError:
-    #                 pass
-
-    #         players_list = [f'<@{player.id}>' for player in participating_players]
-    #         if players_list:
-    #             if len(players_list) == 1:
-    #                 players_string = players_list[0]
-    #             else:
-    #                 players_string = ', '.join(players_list[:-1]) + ' and ' + players_list[-1]
-    #             await notification_channel.send(f'A game has been won by {players_string}')
-
-    #         if before.category.id == DiscordID.test_category_1x:
-    #             self.category_counts['1x'] += 1
-    #             channel_1x_name = f'{Messages.channel_name}{self.category_counts["1x"]}'
-    #             ch = self.bot.get_channel(self.category_counts['channel_1x'])
-    #             if ch:
-    #                 await ch.edit(name=channel_1x_name)
-
-    #         if before.category.id == DiscordID.test_category_4x:
-    #             self.category_counts['4x'] += 1
-    #             channel_4x_name = f'{Messages.channel_name}{self.category_counts["4x"]}'
-    #             ch = self.bot.get_channel(self.category_counts['channel_4x'])
-    #             if ch:
-    #                 await ch.edit(name=channel_4x_name)
-
-
 
     @tasks.loop(hours=24)
     async def daily_task(self):
@@ -248,7 +161,5 @@ class HeadCounter(commands.Cog):
         #         break
         #     await asyncio.sleep(3600)  
 
-
-# Set up the cog
 async def setup(bot):
     await bot.add_cog(HeadCounter(bot))
