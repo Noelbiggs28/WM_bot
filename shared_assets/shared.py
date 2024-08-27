@@ -8,7 +8,6 @@ from discord.ext import commands
 load_dotenv()
 
 def update_google_sheet():
-     Google Sheet initialization
     spreadsheet_ID = os.environ.get('SPREADSHEET_ID')
     gc = gspread.service_account(filename='wmac_key.json')
     sh = gc.open_by_key(spreadsheet_ID)

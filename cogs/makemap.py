@@ -42,7 +42,7 @@ class RulesQuestionView(discord.ui.View):
     @discord.ui.button(label="Yes", style=discord.ButtonStyle.success, custom_id="yes")
     async def yes_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         try:
-            dropdown_view = DropdownViewMap(self.cog)
+            dropdown_view = TimeoutError(self.cog)
             await interaction.response.edit_message(content="Select when the event starts:", view=dropdown_view)
         except Exception as e:
             print(e)
@@ -52,6 +52,7 @@ class RulesQuestionView(discord.ui.View):
         await interaction.response.edit_message(content=f"Please review how to lead and come back <#{DiscordID.test_how_to_lead}>", view=None)
 
 
+
 class TimerView(discord.ui.View):
     def __init__(self, cog):
         super().__init__()
@@ -59,27 +60,34 @@ class TimerView(discord.ui.View):
         
         hour_options = [discord.SelectOption(label=f"{hour:02}", description=f"{hour:02}:00 or {hour:02}:30") for hour in range(24)]
         self.hour_select = discord.ui.Select(placeholder="Select hour", options=hour_options, min_values=1, max_values=1)
+        self.hour_select.callback = self.hour_select_callback
         self.add_item(self.hour_select)
         
         minute_options = [discord.SelectOption(label=f"{minute:02}", description="Minutes") for minute in [0, 15, 30, 45]]
         self.minute_select = discord.ui.Select(placeholder="Select minute", options=minute_options, min_values=1, max_values=1)
+        self.minute_select.callback = self.minute_select_callback
         self.add_item(self.minute_select)
 
-    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+    async def hour_select_callback(self, interaction: discord.Interaction):
         selected_hour = self.hour_select.values[0]
-        selected_minute = self.minute_select.values[0]
-        self.cog.responses['time'] = f"{selected_hour}:{selected_minute}"
+        self.cog.responses['hour'] = selected_hour
         
+        if 'minute' in self.cog.responses:
+            await self.process_time(interaction)
+
+    async def minute_select_callback(self, interaction: discord.Interaction):
+        selected_minute = self.minute_select.values[0]
+        self.cog.responses['minute'] = selected_minute
+        
+        if 'hour' in self.cog.responses:
+            await self.process_time(interaction)
+    
+    async def process_time(self, interaction: discord.Interaction):
+        time = f"{self.cog.responses['hour']}:{self.cog.responses['minute']}"
+        self.cog.responses['time'] = time
         dropdown_view = DropdownViewMap(self.cog)
         await interaction.response.edit_message(content="Select map:", view=dropdown_view)
-        # await interaction.response.send_message(f"Time selected: {self.cog.responses['time']}. Please confirm.", ephemeral=True)
-        # return True
 
-    # @discord.ui.button(label="Confirm", style=discord.ButtonStyle.success)
-    # async def confirm_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-    #     # Move to the next view after confirmation
-    #     dropdown_view = DropdownViewMap(self.cog)
-    #     await interaction.response.edit_message(content="Select map:", view=dropdown_view)
 
 
 # drop down for what map
